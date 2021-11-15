@@ -1,8 +1,8 @@
-node
+node('nodes')
 {
     
     def mavenHome = tool name: "maven3.8.3"
-    
+ /*   
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])
     
         stage('Checkout'){
@@ -13,7 +13,7 @@ node
     {
         sh "${mavenHome}/bin/mvn clean package"
     }
- /*
+ 
     stage('ExecuteSonarQubeReport')
     {
         sh "${mavenHome}/bin/mvn clean sonar:sonar"
